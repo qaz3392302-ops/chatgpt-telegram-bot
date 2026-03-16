@@ -44,10 +44,6 @@ func main() {
 	}
 	cfg.OpenAIBaseURL = baseURL
 
-	if cfg.OPENAIModel != "gpt-3.5-turbo" && cfg.OPENAIModel != "gpt-4" {
-		log.Fatalf("Invalid OPENAI_MODEL: %s", cfg.OPENAIModel)
-	}
-
 	bot, err := tgbotapi.NewBotAPI(cfg.TelegramAPIToken)
 	if err != nil {
 		panic(err)
